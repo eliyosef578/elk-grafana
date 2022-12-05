@@ -1,0 +1,8 @@
+{
+	"@timestamp": "2019-08-06T12:09:12.375Z",
+	"log.level": "INFO",
+	"message": "Tomcat started on port(s): 8080 (http) with context path ''",
+	"service.name": "spring-petclinic",
+	"process.thread.name": "restartedMain",
+	"log.logger": "org.springframework.boot.web.embedded.tomcat.TomcatWebServer"
+}

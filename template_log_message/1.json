@@ -1,0 +1,9 @@
+{
+	"@timestamp": "2019-08-06T12:09:12.375Z",
+	"log level": "info",
+	"version": "1",
+	"Device ID": "1234",
+	"mission": "999",
+	"Class Name": "logger",
+	"message": "test logging 1"
+}
