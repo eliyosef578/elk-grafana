@@ -19,6 +19,10 @@ services:
     volumes:
       - ./extensions/filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro,Z
       - type: bind
+        source: /home/tx1122/elk-grafana/template_log_message
+        target: /opt/template_log_message
+        read_only: true
+      - type: bind
         source: /var/lib/docker/containers
         target: /var/lib/docker/containers
         read_only: true
