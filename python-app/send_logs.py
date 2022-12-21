@@ -17,8 +17,9 @@ test_logger.addHandler(logstash.LogstashHandler(host, 12000, version=1))
 
 # add extra field to logstash message
 
-number_list = [111, 222, 333, 444, 555]
+number_list = ["111", "222", "333", "444", "555"]
 name_list = ["eli", "moshe", "david", "dave", "may"]
+noise_list = ["49.8", "38.5", "98.7", "45.7"]
 #print('python-logstash: test extra fields', extra=extra)
 b=0
 a=0
@@ -31,6 +32,7 @@ while True:
     strt = bool(random.getrandbits(1))
     DeviceID = random.choice(number_list)
     name1 = random.choice(name_list)
+    noise = random.choice(noise_list)
     count = count + 1
     extra = {
     'test_string': 'python version: ' + repr(sys.version_info),
@@ -40,6 +42,7 @@ while True:
     'test_integer': b,
     'device_id': DeviceID,
     'first_name': name1,
+    'noise': noise,
     #'test_list': [1, 2, '3'],
 }
     t = {"a":a, "b":b, "count":count}
@@ -51,3 +54,4 @@ while True:
         #logger.info('python-logstash: test logstash info message:{} '.format(count))
         #logger.info('error count: %s, number of message: %s, test: %s',count,a,b)
         print(t)
+        test_logger.error('python-logstash: error', extra=extra)
